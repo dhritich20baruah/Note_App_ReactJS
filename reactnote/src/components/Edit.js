@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { itemStateContext } from './Context'
 import Axios from 'axios'
-// import ReactQuill from 'react-quill';
-// import 'react-quill/dist/quill.snow.css';
+
 
 const Edit = () => {
   const {post} = useContext(itemStateContext)
@@ -30,9 +29,8 @@ const Edit = () => {
         </div>
         <div className="mb-3">
           <label for="exampleFormControlTextarea1" className="form-label">Note</label>
-          <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="title" value={note} onChange={(event)=>setNote(event.target.value)}/>
+          <textarea type="text" rows="3" className="form-control" id="exampleFormControlInput1" placeholder="title" onChange={(event)=>setNote(event.target.value)} value={note}></textarea>
 
-          {/* <ReactQuill theme="snow" value={note} onChange={setNote} /> */}
         </div>
         <button className="btn btn-warning" onClick={()=>updateSubmit(post._id)}>SUBMIT</button>
         </form>
